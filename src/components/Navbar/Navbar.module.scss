@@ -1,0 +1,200 @@
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #0d0d0d;
+}
+
+.navbar {
+  width: 100%;
+  height: 12vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  & .navbar__container {
+    padding: 0 6rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: 1s linear fadeIn;
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(-200%);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media screen and (max-width: 650px) {
+      padding: 0 1rem;
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(-80%);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    }
+
+    @media screen and (max-width: 1150px) {
+      padding: 0 2rem;
+    }
+
+    & .navbar__brand {
+      flex: 1;
+      justify-content: flex-start;
+      align-items: center;
+      color: #f2f2f2;
+      font-size: 2rem;
+      font-family: sans-serif;
+      font-weight: 400;
+      text-decoration: none;
+      text-transform: uppercase;
+      cursor: auto;
+    }
+
+    & .navbar__text {
+      flex: 1;
+      justify-content: center;
+      align-items: center;
+      color: #f2f2f2;
+      font-size: 1.15rem;
+      font-family: sans-serif;
+      font-weight: 400;
+      text-decoration: none;
+      line-height: 1.5rem;
+
+      @media screen and (max-width: 1150px) {
+        display: none;
+      }
+    }
+
+    & .navbar__hamburger  {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      color: #f2f2f2;
+      font-size: 1.5rem;
+      font-family: sans-serif;
+      font-weight: 400;
+      text-decoration: none;
+      text-transform: uppercase;
+      gap: 10px;
+      
+      & .hamburger {
+        width: 56px;
+        height: 56px;
+        border-radius: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        transition: 0.4s cubic-bezier(0.215, 0.61, 0.355, 1);
+        cursor: pointer;
+
+        &:hover {
+          background: darken(#484848, 12);
+          transform: rotate(90deg);
+          transition: .3s ease-in;
+        }
+  
+        & span {
+          width: 30px;
+          height: 3px;
+          margin: 3px 0;
+          background: #f2f2f2;
+          border-radius: 30px;
+          display: block;
+        }
+      }
+    }
+
+    & .nav {
+      height: 100vh;
+      top: 0;
+      left: 0;
+      display: none;
+
+      & .nav__image {
+        position: absolute;
+        top: 50%;
+        left: 10%;
+        transform: translate(-20.8%, -50%);
+        list-style-type: none;
+
+        @media screen and (max-width: 1150px) {
+          display: none;
+        }
+      }
+
+      & .nav__list {
+        position: absolute;
+        top: 50%;
+        left: 60%;
+        transform: translate(-50%, -50%);
+        list-style-type: none;
+
+        @media screen and (max-width: 650px) {
+          left: 16%;
+          transform: translate(-20%, -50%);
+        }
+
+        @media screen and (min-width: 650px) and (max-width: 1150px) {
+          left: 35%;
+          transform: translate(-35%, -50%);
+        }
+
+        & hr {
+          width: 440%;
+          height: 3px;
+          border-radius: 3px;
+          background: #484848;
+
+          @media screen and (max-width: 1150px) {
+            width: 200%;
+          }
+        }
+
+        & .nav__icon {
+          width: 2.5rem;
+          margin: 1.25rem 0 0;
+          justify-content: flex-end;
+          align-items: center;
+        }
+  
+        & .nav__link {
+          display: inline-block;
+          padding: 32px 0 8px;
+          color: #f2f2f2;
+          font-size: 2rem;
+          font-family: sans-serif;
+          text-decoration: none;
+          text-transform: uppercase;
+
+          &:last-child {
+            display: inline-block;
+            padding: 32px 0 0;
+            color: #484848;
+            font-size: 1.25rem;
+            font-family: sans-serif;
+            text-decoration: none;
+            text-transform: capitalize;
+          }
+        }
+      }
+    }
+  }
+}

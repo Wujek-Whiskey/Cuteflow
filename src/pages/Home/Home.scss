@@ -1,0 +1,21 @@
+header {
+  padding: 0 6rem;
+  width: 100%;
+  height: calc(100vh - 12vh);
+  animation: 2s linear brightness;
+
+  @keyframes brightness {
+    from {
+      opacity: 0;
+      transform: translateX(-200%);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @media screen and (max-width: 1150px) {
+    padding: 0 2rem;
+  }
+}
