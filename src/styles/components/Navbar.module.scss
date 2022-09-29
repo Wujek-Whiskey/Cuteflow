@@ -1,12 +1,4 @@
-*, *::before, *::after {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  background-color: #0d0d0d;
-}
+@import 'styles/abstracts/all';
 
 .navbar {
   width: 100%;
@@ -34,7 +26,7 @@ body {
       }
     }
 
-    @media screen and (max-width: 650px) {
+    @media screen and (min-width: $xs) and (max-width: $md) {
       padding: 0 1rem;
 
       @keyframes fadeIn {
@@ -49,7 +41,7 @@ body {
       }
     }
 
-    @media screen and (max-width: 1150px) {
+    @media screen and (min-width: $md) and (max-width: $lg) {
       padding: 0 2rem;
     }
 
@@ -57,27 +49,31 @@ body {
       flex: 1;
       justify-content: flex-start;
       align-items: center;
-      color: #f2f2f2;
+      color: $light;
       font-size: 2rem;
       font-family: sans-serif;
       font-weight: 400;
       text-decoration: none;
       text-transform: uppercase;
       cursor: auto;
+
+      @media screen and (max-width: $lg) {
+        font-size: 1.62rem;
+      }
     }
 
     & .navbar__text {
       flex: 1;
       justify-content: center;
       align-items: center;
-      color: #f2f2f2;
+      color: $light;
       font-size: 1.15rem;
       font-family: sans-serif;
       font-weight: 400;
       text-decoration: none;
       line-height: 1.5rem;
 
-      @media screen and (max-width: 1150px) {
+      @media screen and (max-width: $lg) {
         display: none;
       }
     }
@@ -86,7 +82,7 @@ body {
       display: flex;
       align-items: center;
       justify-content: flex-end;
-      color: #f2f2f2;
+      color: $light;
       font-size: 1.5rem;
       font-family: sans-serif;
       font-weight: 400;
@@ -106,7 +102,7 @@ body {
         cursor: pointer;
 
         &:hover {
-          background: darken(#484848, 12);
+          background: darken($gray, 12);
           transform: rotate(90deg);
           transition: .3s ease-in;
         }
@@ -115,7 +111,7 @@ body {
           width: 30px;
           height: 3px;
           margin: 3px 0;
-          background: #f2f2f2;
+          background: $light;
           border-radius: 30px;
           display: block;
         }
@@ -135,7 +131,7 @@ body {
         transform: translate(-20.8%, -50%);
         list-style-type: none;
 
-        @media screen and (max-width: 1150px) {
+        @media screen and (max-width: $lg) {
           display: none;
         }
       }
@@ -147,24 +143,24 @@ body {
         transform: translate(-50%, -50%);
         list-style-type: none;
 
-        @media screen and (max-width: 650px) {
+        @media screen and (min-width: $xs) and (max-width: $md) {
           left: 16%;
           transform: translate(-20%, -50%);
         }
 
-        @media screen and (min-width: 650px) and (max-width: 1150px) {
+        @media screen and (min-width: $md) and (max-width: $lg) {
           left: 35%;
           transform: translate(-35%, -50%);
         }
 
         & hr {
-          width: 440%;
+          width: 360%;
           height: 3px;
           border-radius: 3px;
-          background: #484848;
+          background: $gray;
 
-          @media screen and (max-width: 1150px) {
-            width: 200%;
+          @media screen and (max-width: $lg) {
+            width: 162%;
           }
         }
 
@@ -178,7 +174,7 @@ body {
         & .nav__link {
           display: inline-block;
           padding: 32px 0 8px;
-          color: #f2f2f2;
+          color: $light;
           font-size: 2rem;
           font-family: sans-serif;
           text-decoration: none;
@@ -187,11 +183,15 @@ body {
           &:last-child {
             display: inline-block;
             padding: 32px 0 0;
-            color: #484848;
+            color: $gray;
             font-size: 1.25rem;
             font-family: sans-serif;
             text-decoration: none;
             text-transform: capitalize;
+          }
+
+          &:last-child:hover {
+            color: $light;
           }
         }
       }

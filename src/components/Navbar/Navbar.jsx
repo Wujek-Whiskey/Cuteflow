@@ -1,20 +1,21 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 
-import styles from './Navbar.module.scss';
+import { useImageChange } from 'hooks/useImageChange';
+import styles from 'styles/components/Navbar.module.scss';
 
 const Navbar = ({menuVisible, setMenuVisible}) => {
-  const [imageState, setImageState] = useState('https://via.placeholder.com/450');
+  const [imageState, setImageState] = useImageChange('https://via.placeholder.com/450');
 
   return (
     <nav className={styles.navbar}>
       <div className={styles.navbar__container}>
         <Link className={styles.navbar__brand} to='#'>
-          klw
+          cuteflow
         </Link>
         <div className={styles.navbar__text}>
           <p>
-            UX Designer | Frontend Developer <br />
+            Producent muzyczny | DJ <br />
             Portfolio 2022
           </p>
         </div>
@@ -52,10 +53,10 @@ const Navbar = ({menuVisible, setMenuVisible}) => {
             <li>
               <Link 
                 className={styles.nav__link} 
-                to='/studio' 
+                to='/biography' 
                 onMouseEnter={() => setImageState('https://via.placeholder.com/450x650')}
                 onMouseLeave={() => setImageState('https://via.placeholder.com/450')}>
-                studio
+                biografia
               </Link>
               <hr />
             </li>
@@ -65,7 +66,7 @@ const Navbar = ({menuVisible, setMenuVisible}) => {
                 to='/works' 
                 onMouseEnter={() => setImageState('https://via.placeholder.com/450x350')}
                 onMouseLeave={() => setImageState('https://via.placeholder.com/450')}>
-                projekty
+                twórczość
               </Link>
               <hr />
             </li>
@@ -81,13 +82,13 @@ const Navbar = ({menuVisible, setMenuVisible}) => {
             </li>
 
             <li>
-              <Link className={styles.nav__link} to='#'>instagram</Link>
+              <Link className={styles.nav__link} to='https://www.instagram.com'>instagram</Link>
             </li>
             <li>
-              <Link className={styles.nav__link} to='#'>behance</Link>
+              <Link className={styles.nav__link} to='https://www.youtube.com/'>youtube</Link>
             </li>
             <li>
-              <Link className={styles.nav__link} to='#'>github</Link>
+              <Link className={styles.nav__link} to='ttps://www.spotify.com/'>spotify</Link>
             </li>
           </ul>
         </div>

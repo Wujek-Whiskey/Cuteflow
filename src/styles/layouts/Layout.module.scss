@@ -1,0 +1,11 @@
+@import 'styles/abstracts/_all.scss';
+
+.layout {
+  padding: 0 6rem;
+  width: 100%;
+  height: 100%;
+
+  @media screen and (max-width: $lg) {
+    padding: 0 2rem;
+  }
+}

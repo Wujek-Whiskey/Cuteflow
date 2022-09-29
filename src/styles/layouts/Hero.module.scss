@@ -1,4 +1,6 @@
-header {
+@import 'styles/abstracts/all';
+
+.hero {
   padding: 0 6rem;
   width: 100%;
   height: calc(100vh - 12vh);
@@ -15,7 +17,7 @@ header {
     }
   }
 
-  @media screen and (max-width: 1150px) {
+  @media screen and (max-width: $lg) {
     padding: 0 2rem;
   }
 }
