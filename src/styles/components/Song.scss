@@ -3,9 +3,13 @@
 .card__song {
   margin: 0 2.5rem 0 0;
   width: 420px;
-  height: 480px;
-  border: 2px solid $light;
+  height: 515px;
+  border: 2px solid $dark;
   border-radius: 10px;
+
+  &:hover{
+    box-shadow: 1rem 1rem #ff00ff;
+  }
 
   @media screen and (max-width: $lg) {
     margin: 0 0 2rem;
@@ -13,7 +17,7 @@
 
   @media screen and (max-width: $md) {
     width: 100%;
-    height: 475px;
+    height: 510px;
   }
 
   & .card__song-inner {
@@ -21,26 +25,30 @@
     margin: 1rem auto;
 
     & .card__song-video {
+      padding: .75rem;
       width: 100%;
       max-width: 100%;
+      background: linear-gradient(45deg, #ff00ff, #00ffff);
+      border-radius: .25rem;
     }
 
     & .card__song-content {
       margin: 1rem 0;
 
       & .card__song-header,
-      & .card__song-description {
-        padding: .4rem 0;
-        color: $light;
+      & .card__song-date {
+        padding: .2rem 0;
+        color: $dark;
         font-size: 1.5rem;
         font-family: sans-serif;
         font-weight: 400;
         text-decoration: none;
         text-transform: capitalize;
         text-align: justify;
+        line-height: 2rem;
       }
 
-      & .card__song-description {
+      & .card__song-date {
         font-size: 1rem;
       }
     }

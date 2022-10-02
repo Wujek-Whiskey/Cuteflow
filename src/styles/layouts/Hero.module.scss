@@ -4,9 +4,9 @@
   padding: 0 6rem;
   width: 100%;
   height: calc(100vh - 12vh);
-  animation: 2s linear brightness;
+  animation: 2s linear moveToRight;
 
-  @keyframes brightness {
+  @keyframes moveToRight {
     from {
       opacity: 0;
       transform: translateX(-200%);

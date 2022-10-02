@@ -1,0 +1,92 @@
+@import 'styles/abstracts/_all.scss';
+
+.biography__section {
+  padding: 6rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;  
+  animation: 1s linear moveToUp;
+
+  @keyframes moveToUp {
+    from {
+      opacity: 0;
+      transform: translateY(15%);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @media screen and (max-width: $lg) {
+    display: block;
+  }
+
+  & .biography__image {
+    max-width: 50%;
+    position: relative;
+  
+    @media screen and (max-width: $lg) {
+      max-width: 100%;
+    }
+  }
+
+  & .biography__content {
+    max-width: 50%;
+    position: relative;
+  
+    @media screen and (max-width: $lg) {
+      padding: 2rem 0 0;
+      max-width: 100%;
+    }
+  
+    & .biography__header,
+    & .biography__subheader {
+      padding: 0 0 2rem;
+      color: $dark;
+      font-size: 2rem;
+      font-family: sans-serif;
+      font-weight: 400;
+      text-decoration: none;
+  
+      @media screen and (max-width: $lg) {
+        padding: 0 0 1rem;
+        font-size: 1.5rem;
+      }
+    }
+
+    & .biography__subheader {
+      font-size: 1.5rem;
+      color: $gray;
+
+      @media screen and (max-width: $lg) {
+        font-size: 1rem;
+        font-weight: 700;
+      }
+    }
+  
+    & .biography__text {
+      color: $dark;
+      font-size: 1.25rem;
+      font-family: sans-serif;
+      font-weight: 400;
+      text-align: justify;
+      line-height: 2.2rem;
+      text-decoration: none;
+  
+      @media screen and (max-width: $lg) {
+        line-height: 1.8rem;
+        font-size: 1rem;
+      }
+    }
+
+    & div {
+      margin: 2rem 0;
+      width: 100%;
+      height: 2px;
+      background-color: $gray;
+      border: none;
+      border-radius: 2px;
+    }
+  }
+}
